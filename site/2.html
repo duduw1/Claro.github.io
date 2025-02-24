@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salvar Destino no GitHub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Para onde você deseja passear?</h1>
+    <input type="text" id="destino" placeholder="Digite o destino...">
+    <br>
+    <button onclick="salvarDestino()">Salvar Destino</button>
+
+    <script>
+        async function salvarDestino() {
+            const destino = document.getElementById('destino').value;
+
+            if (destino.trim() === "") {
+                alert("Por favor, digite um destino!");
+                return;
+            }
+
+            const token = "SEU_TOKEN_DO_GITHUB"; // Cole seu token aqui
+            const repo = "seu-usuario/seu-repositorio"; // Substitua pelo seu usuário e repositório
+            const path = "destinos.txt"; // Nome do arquivo no repositório
+
+            try {
+                // Verifica se o arquivo já existe
+                const response = await fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
+                    headers: {
+                        Authorization: `token ${token}`,
+                    },
+                });
+
+                let sha = null;
+                if (response.ok) {
+                    const data = await response.json();
+                    sha = data.sha; // Pega o SHA do arquivo existente
+                }
+
+                // Cria ou atualiza o arquivo
+                const content = btoa(`Destino: ${destino}\n`); // Converte o conteúdo para base64
+                const updateResponse = await fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
+                    method: 'PUT',
+                    headers: {
+                        Authorization: `token ${token}`,
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        message: "Adicionando destino",
+                        content: content,
+                        sha: sha, // Se o arquivo já existe, passa o SHA para atualizar
+                    }),
+                });
+
+                if (updateResponse.ok) {
+                    alert("Destino salvo no GitHub!");
+                } else {
+                    alert("Erro ao salvar o destino.");
+                }
+            } catch (error) {
+                alert("Erro na requisição: " + error.message);
+            }
+        }
+    </script>
+
+</body>
+</html>
