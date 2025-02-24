@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aceitar Passear</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Você aceita passear?</h1>
+    <button onclick="aceitar()">Sim</button>
+    <button onclick="recusar()">Não</button>
+
+    <p id="mensagem" class="error"></p>
+
+    <script>
+        function aceitar() {
+            document.getElementById('mensagem').textContent = "Ótimo! Vamos passear!";
+            document.getElementById('mensagem').style.color = "green";
+        }
+
+        function recusar() {
+            document.getElementById('mensagem').textContent = "Erro: Você precisa aceitar para continuar!";
+            document.getElementById('mensagem').style.color = "red";
+        }
+    </script>
+
+</body>
+</html>
