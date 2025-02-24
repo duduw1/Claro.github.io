@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha seu Passeio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Para onde você deseja passear?</h1>
+    <input type="text" id="destino" placeholder="Digite o destino...">
+    <br>
+    <button onclick="escolherDestino()">Confirmar</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function escolherDestino() {
+            // Pega o valor digitado no campo de texto
+            const destino = document.getElementById('destino').value;
+
+            // Verifica se o campo não está vazio
+            if (destino.trim() === "") {
+                alert("Por favor, digite um destino!");
+                return;
+            }
+
+            // Exibe o destino escolhido na tela
+            document.getElementById('resultado').innerHTML = `Você escolheu passear para: <strong>${destino}</strong>!`;
+        }
+    </script>
+
+</body>
+</html>
