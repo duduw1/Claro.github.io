@@ -1,11 +1,11 @@
-# Olá, eu sou [Seu Nome]! 👋
+# Olá, eu sou Robson! 👋
 
 ## Sobre Mim
 - � **Idade:** [Sua Idade]
-- 🌍 **Localização:** [Sua Cidade/País]
-- 💼 **Profissão:** [Sua Profissão]
-- 🎓 **Formação:** [Sua Formação]
-- 🚀 **Hobbies:** Programar, ler, jogar, [outros hobbies]
+- 🌍 **Localização:** Matozinhos, Brasil
+- 💼 **Profissão:** Tec. Informatica
+- 🎓 **Formação:** Enge de Computação Puc Minas
+- 🚀 **Hobbies:** Programar, ler, jogar, andar de bike, Jiu-jitsu
 
 ## Habilidades Técnicas
 - 💻 **Linguagens de Programação:** 
@@ -29,7 +29,7 @@
 ![Linguagens Mais Usadas](https://github-readme-stats.vercel.app/api/top-langs/?username=seu-usuario&layout=compact&theme=radical)
 
 ## Contato
-- 📧 **Email:** [seu-email@example.com]
+- 📧 **Email:** robsontigm@gmail.com
 - 💼 **LinkedIn:** [Meu LinkedIn](https://linkedin.com/in/seu-perfil)
 - 🐦 **Twitter:** [Meu Twitter](https://twitter.com/seu-perfil)
 - 📸 **Instagram:** [Meu Instagram](https://instagram.com/seu-perfil)
