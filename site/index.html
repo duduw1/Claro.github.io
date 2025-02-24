@@ -35,6 +35,10 @@
         function aceitar() {
             document.getElementById('mensagem').textContent = "Ótimo! Vamos passear!";
             document.getElementById('mensagem').style.color = "green";
+                // Aguarda 3 segundos (3000 milissegundos) e redireciona para pagina1.html
+            setTimeout(function() {
+                window.location.href = "1.html";
+            }, 3000);
         }
 
         function recusar() {
