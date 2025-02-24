@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Passeio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #6b6b6b;
+            color: #fff;
+            background-image: url('https://i.imgur.com/3QZQZQz.png'); /* Imagem de fundo do Minecraft */
+            background-size: cover;
+            background-position: center;
+        }
+        h1 {
+            font-size: 3rem;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px #000;
+            margin-top: 50px;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            text-shadow: 1px 1px 2px #000;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .button.nao {
+            background-color: #f44336;
+        }
+        .button.nao:hover {
+            background-color: #d32f2f;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #ffd700;
+            text-shadow: 1px 1px 2px #000;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Vamos Passear no Minecraft?</h1>
+    <div class="container">
+        <button class="button" onclick="escolher('sim')">Sim</button>
+        <button class="button nao" onclick="escolher('nao')">Não</button>
+        <div id="mensagem" class="message"></div>
+    </div>
+
+    <script>
+        function escolher(resposta) {
+            const mensagem = document.getElementById('mensagem');
+
+            if (resposta === 'sim') {
+                mensagem.innerHTML = "Ótimo! Vamos explorar o mundo do Minecraft juntos! 🎮";
+                setTimeout(() => {
+                    window.location.href = "pagina1.html"; // Redireciona para a próxima página
+                }, 3000); // Aguarda 3 segundos antes de redirecionar
+            } else {
+                mensagem.innerHTML = "Que pena! Talvez na próxima vez... 😢";
+            }
+        }
+    </script>
+
+</body>
+</html>
